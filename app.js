@@ -8,12 +8,15 @@ const app = express();
 const PORT = process.env.PORT;
 
 app.use(morgan('combined'));
-app.use(express.static(path.join(__dirname,"public")));
+app.use(express.static(path.join(__dirname,"/public/")));
 
-// app.get("/", (req,res) => {
+app.set("views","./src/views");
+app.set("view engine", "ejs");
 
-//     res.send('Hello GYN.N');
-// }) 
+app.get("/", (req,res) => {
+
+    res.render('index', {username: 'KTT.W'});
+}) 
 
 app.listen(PORT, ()=>{
     console.log("Listening on PORT" + chalk.green(" : "+PORT));
