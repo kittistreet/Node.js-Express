@@ -14,16 +14,18 @@ app.use(express.static(path.join(__dirname, "/public/")));
 app.set("views", "./src/views");
 app.set("view engine", "ejs");
 
-productsRouter.route("/").get((req, res) => {
-  res.render("products",{
-    {},
-    {},
-    {},
-    {}
+// productsRouter.route("/").get((req, res) => {
+//   res.render("products",{
+//     {},
+//     {},
+//     {},
+//     {}
     
 
-  });
-});
+//   });
+// });
+
+
 productsRouter.route("/1").get((req, res) => {
   res.send("Hello world !! I'm Product1");
 });
